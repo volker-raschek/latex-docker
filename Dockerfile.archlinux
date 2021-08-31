@@ -1,0 +1,24 @@
+# Base-Image
+FROM docker.io/library/archlinux:latest
+
+# Labels
+LABEL maintainer="Markus Pesch <markus.pesch@cryptic.systems>"
+
+# Runs
+RUN pacman --sync --refresh --noconfirm --sysupgrade
+RUN pacman --sync --noconfirm \
+      biber \
+      curl \
+      git \
+      gnuplot \
+      make \
+      python-pygments \
+      texlive-bin \
+      texlive-lang \
+      texlive-most
+
+ENV PATH=/usr/bin/vendor_perl:${PATH}
+
+# Workspace
+WORKDIR /workspace
+VOLUME [ "/workspace" ]

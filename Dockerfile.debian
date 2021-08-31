@@ -1,0 +1,34 @@
+# Build-Arguments
+ARG TAG=latest
+
+# Base-Image
+FROM docker.io/library/debian:${TAG}
+
+# Labels
+LABEL maintainer="Markus Pesch <markus.pesch@cryptic.systems>"
+
+# Environment
+ENV DEBIAN_FRONTEND="noninteractive"
+
+# Runs
+RUN apt-get update
+RUN apt-get upgrade --yes
+RUN apt-get install --yes \
+      biber \
+      curl \
+      git \
+      gnuplot \
+      latexmk \
+      make \
+      texlive-full
+
+# version specific packages
+RUN if [ $(cat /etc/debian_version) != "11.0" ]; then apt-get install --yes python-pygments; fi
+RUN if [ $(cat /etc/debian_version) = "11.0" ]; then apt-get install --yes python3-pygments; fi
+
+# remove dpkg lists
+RUN rm --recursive --force /var/lib/apt/lists/*
+
+# Workspace
+WORKDIR /workspace
+VOLUME [ "/workspace" ]

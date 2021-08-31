@@ -1,0 +1,25 @@
+# Build-Arguments
+ARG TAG=latest
+
+# Base-Image
+FROM docker.io/library/centos:${TAG}
+
+# Labels
+LABEL maintainer="Markus Pesch <markus.pesch@cryptic.systems>"
+
+# Runs
+RUN yum update --assumeyes
+RUN yum install --assumeyes \
+      biber \
+      curl \
+      git \
+      gnuplot \
+      latexmk \
+      make \
+      python-pygments \
+      texlive \
+      texlive-*.noarch
+
+# Workspace
+WORKDIR /workspace
+VOLUME [ "/workspace" ]
