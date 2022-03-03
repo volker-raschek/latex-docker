@@ -47,6 +47,10 @@ kind: pipeline
 type: docker
 name: archlinux
 
+platform:
+  os: linux
+  arch: amd64
+
 steps:
 - name: archlinux
   image: docker.io/volkerraschek/build-image:latest
@@ -93,6 +97,10 @@ kind: pipeline
 type: docker
 name: centos
 
+platform:
+  os: linux
+  arch: amd64
+
 steps:
 - name: centos7
   image: docker.io/volkerraschek/build-image:latest
@@ -138,6 +146,10 @@ volumes:
 kind: pipeline
 type: docker
 name: debian
+
+platform:
+  os: linux
+  arch: amd64
 
 steps:
 - name: 8-slim
@@ -218,6 +230,10 @@ kind: pipeline
 type: docker
 name: fedora
 
+platform:
+  os: linux
+  arch: amd64
+
 steps:
 - name: fedora-33
   image: docker.io/volkerraschek/build-image:latest
@@ -274,6 +290,10 @@ volumes:
 kind: pipeline
 type: docker
 name: ubuntu
+
+platform:
+  os: linux
+  arch: amd64
 
 steps:
 - name: ubuntu-16.04
