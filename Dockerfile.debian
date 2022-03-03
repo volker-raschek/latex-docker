@@ -10,6 +10,9 @@ LABEL maintainer="Markus Pesch <markus.pesch@cryptic.systems>"
 # Environment
 ENV DEBIAN_FRONTEND="noninteractive"
 
+# set shell
+SHELL [ "/bin/bash", "-c" ]
+
 # Runs
 RUN apt-get update
 RUN apt-get upgrade --yes
@@ -22,9 +25,16 @@ RUN apt-get install --yes \
       make \
       texlive-full
 
-# version specific packages
-RUN if [ $(cat /etc/debian_version) != "11.0" ]; then apt-get install --yes python-pygments; fi
-RUN if [ $(cat /etc/debian_version) = "11.0" ]; then apt-get install --yes python3-pygments; fi
+# install distribution specific versions
+RUN case "$(cat /etc/debian_version)" in \
+      11*) \
+        apt-get install --yes python3-pygments \
+      ;; \
+      *) \
+        apt-get install --yes python-pygments \
+      ;; \
+    esac
+
 
 # remove dpkg lists
 RUN rm --recursive --force /var/lib/apt/lists/*
