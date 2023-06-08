@@ -15,7 +15,8 @@ RUN pacman --sync --noconfirm \
       python-pygments \
       texlive-bin \
       texlive-lang \
-      texlive-most
+      texlive-most && \
+    rm --recursive --force /var/cache/pacman/pkg
 
 ENV PATH=/usr/bin/vendor_perl:${PATH}
 
