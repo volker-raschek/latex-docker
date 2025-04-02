@@ -53,7 +53,7 @@ platform:
 
 steps:
 - name: archlinux
-  image: harbor.cryptic.systems/docker/volkerraschek/build-image:latest
+  image: docker.io/volkerraschek/build-image:latest
   commands:
   - ./build.sh archlinux latest
   environment:
@@ -103,7 +103,7 @@ platform:
 
 steps:
 - name: centos7
-  image: harbor.cryptic.systems/docker/volkerraschek/build-image:latest
+  image: docker.io/volkerraschek/build-image:latest
   commands:
   - ./build.sh centos 7
   environment:
@@ -153,7 +153,7 @@ platform:
 
 steps:
 - name: 8-slim
-  image: harbor.cryptic.systems/docker/volkerraschek/build-image:latest
+  image: docker.io/volkerraschek/build-image:latest
   commands:
   - ./build.sh debian 8-slim
   environment:
@@ -164,7 +164,7 @@ steps:
     path: /var/run/docker.sock
 
 - name: 9-slim
-  image: harbor.cryptic.systems/docker/volkerraschek/build-image:latest
+  image: docker.io/volkerraschek/build-image:latest
   commands:
   - ./build.sh debian 9-slim
   environment:
@@ -175,7 +175,7 @@ steps:
     path: /var/run/docker.sock
 
 - name: 10-slim
-  image: harbor.cryptic.systems/docker/volkerraschek/build-image:latest
+  image: docker.io/volkerraschek/build-image:latest
   commands:
   - ./build.sh debian 10-slim
   environment:
@@ -186,7 +186,7 @@ steps:
     path: /var/run/docker.sock
 
 - name: 11-slim
-  image: harbor.cryptic.systems/docker/volkerraschek/build-image:latest
+  image: docker.io/volkerraschek/build-image:latest
   commands:
   - ./build.sh debian 11-slim
   environment:
@@ -236,7 +236,7 @@ platform:
 
 steps:
 - name: fedora-33
-  image: harbor.cryptic.systems/docker/volkerraschek/build-image:latest
+  image: docker.io/volkerraschek/build-image:latest
   commands:
   - ./build.sh fedora 33
   environment:
@@ -247,7 +247,7 @@ steps:
     path: /var/run/docker.sock
 
 - name: fedora-34
-  image: harbor.cryptic.systems/docker/volkerraschek/build-image:latest
+  image: docker.io/volkerraschek/build-image:latest
   commands:
   - ./build.sh fedora 34
   environment:
@@ -297,7 +297,7 @@ platform:
 
 steps:
 - name: ubuntu-16.04
-  image: harbor.cryptic.systems/docker/volkerraschek/build-image:latest
+  image: docker.io/volkerraschek/build-image:latest
   commands:
   - ./build.sh ubuntu 16.04
   environment:
@@ -308,7 +308,7 @@ steps:
     path: /var/run/docker.sock
 
 - name: ubuntu-18.04
-  image: harbor.cryptic.systems/docker/volkerraschek/build-image:latest
+  image: docker.io/volkerraschek/build-image:latest
   commands:
   - ./build.sh ubuntu 18.04
   environment:
@@ -319,7 +319,7 @@ steps:
     path: /var/run/docker.sock
 
 - name: ubuntu-20.04
-  image: harbor.cryptic.systems/docker/volkerraschek/build-image:latest
+  image: docker.io/volkerraschek/build-image:latest
   commands:
   - ./build.sh ubuntu 20.04
   environment:
