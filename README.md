@@ -1,6 +1,5 @@
 # Docker Latex
 
-[![Build Status](https://drone.cryptic.systems/api/badges/volker.raschek/latex-docker/status.svg)](https://drone.cryptic.systems/volker.raschek/latex-docker)
 [![Docker Pulls](https://img.shields.io/docker/pulls/volkerraschek/latex)](https://hub.docker.com/r/volkerraschek/latex)
 
 This repository, hosted on
