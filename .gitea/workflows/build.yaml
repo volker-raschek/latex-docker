@@ -1,0 +1,29 @@
+name: Build
+
+on:
+  pull_request:
+    types:
+    - opened
+    - reopened
+    - synchronize
+  push:
+    branches:
+    - master
+  workflow_dispatch: {}
+
+jobs:
+  build-arch-linux:
+    runs-on: ubuntu-latest-amd64
+    steps:
+      - uses: actions/checkout@v4.2.2
+      - uses: docker/setup-qemu-action@v3.6.0
+      - uses: docker/setup-buildx-action@v3.10.0
+
+      - name: Build image
+        run: |
+          TAG=latest
+
+          docker buildx build \
+            --file Dockerfile.archlinux \
+            --tag git.cryptic.systems/volker.raschek/latex:${TAG}-archlinux \
+            .
