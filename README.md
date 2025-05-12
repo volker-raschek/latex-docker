@@ -11,7 +11,7 @@ provided by minted into a PDF file.
 
 Available Images:
 
-- `docker.io/volkerraschek/latex:latest-archlinux`
+- `git.cryptic.systems/volker.raschek/latex:latest-archlinux`
 
 You can find a complete list of all docker images based on different distributions on [Docker
 Hub](https://hub.docker.com/r/volkerraschek/latex-docker/tags).
