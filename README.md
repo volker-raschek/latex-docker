@@ -28,7 +28,7 @@ $ docker run \
     --rm \
     --user="$(shell id -u):$(shell id -g)" \
     --net="none" \
-    --volume="${PWD}:/workspace" volkerraschek/latex:latest-archlinux \
+    --volume="${PWD}:/workspace" git.cryptic.systems/volker.raschek/latex:latest-archlinux \
     latexmk \
       -shell-escape \
       -synctex=1 \
@@ -47,7 +47,7 @@ $ docker run \
     --rm \
     --user="$(shell id -u):$(shell id -g)" \
     --net="none" \
-    --volume="${PWD}:/workspace" volkerraschek/latex:latest-archlinux \
+    --volume="${PWD}:/workspace" git.cryptic.systems/volker.raschek/latex:latest-archlinux \
     pdflatex \
       -shell-escape \
       -synctex=1 \
